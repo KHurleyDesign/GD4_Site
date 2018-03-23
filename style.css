@@ -6,9 +6,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 html {
     width: 100%;
     min-height: 100% !important;
+	  box-sizing: border-box;
 }
+*, *:before, *:after {
+	  box-sizing: inherit;
+}
+
 body {
-  margin: 0px auto;
+	  margin: 0px auto;
     width: 100%;
 }
 
@@ -27,7 +32,7 @@ body {
 .nine.columns,
 .ten.columns,
 .eleven.columns,
-.twelve.columns  {display: inline; float: left; margin-left: 10px; margin-right: 10px;}
+.twelve.columns  {display: block; float: left; padding-left: 10px; padding-right: 10px;}
 
 /* `Grid >> Children (Alpha ~ First, Omega ~ Last)
 ----------------------------------------------------------------------------------------------------*/
@@ -43,7 +48,7 @@ body {
 .nine.columns.first,
 .ten.columns.first,
 .eleven.columns.first,
-.twelve.columns.first  {margin-left: 0px;}
+.twelve.columns.first  {padding-left: 0px;}
 
 .one.column.last,
 .two.columns.last,
@@ -56,42 +61,48 @@ body {
 .nine.columns.last,
 .ten.columns.last,
 .eleven.columns.last,
-.twelve.columns.last  {margin-right: 0px;}
+.twelve.columns.last  {padding-right: 0px;}
 
 
 /* `Grid >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
-.one.column {width: 80px;}
-.two.columns {width: 180px;}
-.three.columns {width: 280px;}
-.four.columns {width: 380px;}
-.five.columns {width: 480px;}
-.six.columns {width: 580px;}
-.seven.columns {width: 680px;}
-.eight.columns {width: 780px;}
-.nine.columns {width: 880px;}
-.ten.columns {width: 980px;}
-.eleven.columns {width: 1080px;}
-.twelve.columns {width: 1180px;}
+.one.column {width: calc(100% / 12 * 1);}
+.two.columns {width: calc(100% / 12 * 2);}
+.three.columns {width: calc(100% / 12 * 3);}
+.four.columns {width: calc(100% / 12 * 4);}
+.five.columns {width: calc(100% / 12 * 5);}
+.six.columns {width: calc(100% / 12 * 6);}
+.seven.columns {width: calc(100% / 12 * 7);}
+.eight.columns {width: calc(100% / 12 * 8);}
+.nine.columns {width: calc(100% / 12 * 9);}
+.ten.columns {width: calc(100% / 12 * 10);}
+.eleven.columns {width: calc(100% / 12 * 11);}
+.twelve.columns {width: calc(100% / 12 * 12);}
 
 /* `Indents >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
 
-.indent-one {padding-left: 100px;}
-.indent-two {padding-left: 200px;}
-.indent-three {padding-left: 300px;}
-.indent-four {padding-left: 400px;}
-.indent-five {padding-left: 500px;}
-.indent-six {padding-left: 600px;}
-.indent-seven {padding-left: 700px;}
-.indent-eight {padding-left: 800px;}
-.indent-nine {padding-left: 900px;}
-.indent-ten {padding-left: 1000px;}
-.indent-eleven {padding-left: 1100px;}
+.indent-one {margin-left: calc(100% / 12 * 1);}
+.indent-two {margin-left: calc(100% / 12 * 2);}
+.indent-three {margin-left: calc(100% / 12 * 3);}
+.indent-four {margin-left: calc(100% / 12 * 4);}
+.indent-five {margin-left: calc(100% / 12 * 5);}
+.indent-six {margin-left: calc(100% / 12 * 6);}
+.indent-seven {margin-left: calc(100% / 12 * 7);}
+.indent-eight {margin-left: calc(100% / 12 * 8);}
+.indent-nine {margin-left: calc(100% / 12 * 9);}
+.indent-ten {margin-left: calc(100% / 12 * 10);}
+.indent-eleven {margin-left: calc(100% / 12 * 11);}
+
+.container {
+	max-width: 1200px;
+	margin: auto;
+}
 
 /* `Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
+
 
 .clear {
   clear: both;
@@ -99,63 +110,63 @@ body {
   overflow: hidden;
   visibility: hidden;
   width: 0;
-    height: 0;}
+  height: 0;
+}
 
-		.fill {
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-		    overflow: hidden
-		}
-		.fill img {
-		    flex-shrink: 0;
-		    min-width: 100%;
-		    min-height: 100%
-		}
+.fill {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden
+}
 
- 		.srink img{
-			width: 100%;
-			height: auto;
-		}
+.fill img {
+	flex-shrink: 0;
+	min-width: 100%;
+	min-height: 100%
+}
 
-		.aboutPadding{
-			padding-top: 1000px;
-			padding-bottom:50px;
-		}
+.shrink img{
+	width: 100%;
+	height: auto;
+}
 
-   .imagePadding{
-		 padding-top: 60px;
-		 padding-bottom: 40px;
-	 }
+.aboutPadding{
+	padding-top: 1000px;
+	padding-bottom:50px;
+}
 
+.imagePadding{
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
 
-	 /* Style the header */
-	 .header {
-	   padding: 10px 16px;
-	   background: #791818;
-		 width: 100%
-	 }
+.extend{
+	margin: 0px auto;
+	width:100%;
+}
+
 
 	 /* Page content */
-	 .content {
-	   padding: 16px;
-	 }
+.content {
+	padding: 16px;
+}
 
-	 .footer{
-		 padding-bottom: 100px;
-	 }
+.footer{
+	padding-bottom: 100px;
+}
 
 	 /* The sticky class is added to the header with JS when it reaches its scroll position */
-	 .sticky {
-	   position: fixed;
-	   top: 0;
-	   width: 100%
-	 }
+.sticky {
+	 position: fixed;
+	 top: 0;
+	 width: 100%
+ }
 
 	 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-	 .sticky + .content {
-	   padding-top: 102px;
-	 }
+.sticky + .content {
+	 padding-top: 102px;
+}
 
 
 
