@@ -100,6 +100,13 @@ body {
 	margin: auto;
 }
 
+.cf:after,
+.container:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+    clear: both;
+}
+
 /* `Clear Floated Elements
 ----------------------------------------------------------------------------------------------------*/
 
@@ -127,7 +134,7 @@ body {
 }
 
 .shrink img{
-	width: 100%;
+	width: 75%;
 	height: auto;
 }
 
@@ -170,60 +177,10 @@ body {
 
 
 
-/* animation for price sheet */
-
 /* Our box element */
 .box {
-width: 150px;
-height: 100px;
+width: auto;
+height: auto;
 background-color: #e5e1dd;
 box-shadow: 5px 5px 25px #000;
-transition: all 1s;
-}
-
-/* On hover... */
-.box:hover {
-/* Increase width */
-height: 300px;
-/* Change color */
-background-color: #e5e1dd;
-/* Move the shadow */
-box-shadow: -5px 5px 25px #000;
-}
-
-/* The first line of text */
-.box__blurb {
-/* Start with full opacity and centered */
-opacity: 1;
-transform: translateX(45px);
-/* Then transition these chained properties */
-transition:
-	opacity 0.5s 2s,
-	transform 0.5s 0.5s;
-}
-
-/* On .box hover... */
-.box:hover .box__blurb {
-/* Move over to the right
-transform: translateX(-500px); */
-}
-
-/* The second line of text */
-.rect__blurb {
-/* Start with no opacity and pushed off the element */
-opacity: 0;
-transform: translateX(10px);
-
-/* Then transition these chained properties */
-transition:
-	opacity 0.5s .2s,
-	transform 0.5s 1s;
-}
-
-/* On .box hover... */
-.box:hover .rect__blurb {
-/* Face in */
-opacity: 1;
-/* While entering from the right
-transform: translateX(-600px);*/
 }
